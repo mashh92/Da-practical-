@@ -1,35 +1,56 @@
-Edt
+import re
 
-Figmat
+import matplotlib.pyplot as plt
 
-Fun
+from nltk.corpus import stopwords
 
-Gutions
+from nltk.probability import FreqDist
 
-Window
-
-Help
-
-Import nitk
-
-inport
-
-re
-
-text="1111 Text Summariaztion 000 is an NLP technige that extracts text froma large amount of data. It is the process of identifying the most imporant Imeaningful information Sin a document and compressing it 7into a shorter version by preserving its meaning. Types: Extractive summarization and Abstractive summariza To perform extractive summarization, @we calculate the sentence weights and choose the first 'n' sentence w maximum weight, (The weights are calculated on the basis of the word frequencies ]***
+from nltk.tokenize import word tokenize from wordcloud import WordCloud
 
 A
 
-Removing numbers inside square brackets text = re.sub(r'\/\*\/','', text)
+?
 
-#Fixing extra spaces
+#Text paragraph to process
 
-text = re.sub(r\s+','', text)
+paragraph text = """
 
-Removing special characters like [] {} *
+Hello all, Welcome to Python Programming Academy. Python Programming Academy is a nice platform to learn skills. It is difficult to get enrolled in this Academy.
 
-text = re.sub(r'[\[\][*]','',text)
+tokenized_words = word_tokenize (paragraph_text)
 
-Removing non-alphabet characters formatted text = re.sub('[^a-zA-Z]','',text)
+stop_words_data = set(stopwords.words("english")) print("List of Stopwords: \n", stop words data)
 
-print(formatted_text)
+filtered words_list = []
+
+for word in tokenized words:
+
+1f word.lower() not in stop words data and word.isalpha(): filtered words list.append(word)
+
+print("\n Tokenized Words: \n", tokenized words)
+
+print("\n Filtered Words: \n", filtered words list)
+#Calculate word frequency distribution
+
+freq_dist FreqDist(filtered words list)
+
+#Path to the TrueType font on Ubuntu (use DejaVuSans-Bold or other available fonts)
+
+font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+
+#Generate and display word cloud using the specified font
+
+wordcloud = WordCloud (width=800, height=400, background_color='white', font_path=font_path).generate('.joi
+
+#Display the word cloud
+
+plt.figure(figsize=(10,5
+
+)) plt.imshow(wordcloud, interpolation='bilinear')
+
+plt.axis('off')
+
+plt.title('Word Cloud of the Text')
+
+plt.show()
